@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_solar_milestones" name="Billing Milestones" parent="solar_security.menu_solar_root"
+              action="solar_milestone_action" sequence="60"
+              groups="solar_security.group_solar_finance,solar_security.group_solar_manager"/>
+    <menuitem id="menu_solar_ms_templates" name="Milestone Templates" parent="solar_security.menu_solar_config"
+              action="solar_milestone_template_action" sequence="20"/>
+    <menuitem id="menu_solar_project_stages" name="Project Stages" parent="solar_security.menu_solar_config"
+              action="project_stage_solar_action" sequence="30"/>
+</odoo>

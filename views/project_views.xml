@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="project_form_solar" model="ir.ui.view">
+        <field name="name">project.project.form.solar</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.edit_project"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Solar" name="solar_info">
+                    <group>
+                        <field name="solar_order_id"/>
+                        <field name="solar_region_id" options="{'no_create': True}"/>
+                        <field name="solar_budget_cost" groups="solar_security.group_solar_finance,solar_security.group_solar_manager"/>
+                        <field name="solar_planned_margin" groups="solar_security.group_solar_finance,solar_security.group_solar_manager"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

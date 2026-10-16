@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="sale_order_form_milestones" model="ir.ui.view">
+        <field name="name">sale.order.form.milestones</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Milestone Billing" name="solar_milestones">
+                    <group>
+                        <field name="solar_milestone_template_id" readonly="state == 'sale'"/>
+                        <field name="solar_project_id"/>
+                    </group>
+                    <button name="action_solar_regenerate_milestones" type="object" string="Regenerate Milestones"
+                            invisible="state != 'sale' or not solar_milestone_template_id"
+                            confirm="Existing pending milestones will be rebuilt from the template."/>
+                    <field name="solar_milestone_ids">
+                        <tree create="false" delete="false">
+                            <field name="sequence" widget="handle"/>
+                            <field name="name"/>
+                            <field name="percent"/>
+                            <field name="amount"/>
+                            <field name="trigger_code"/>
+                            <field name="state"/>
+                            <field name="invoice_id"/>
+                            <button name="action_invoice" type="object" string="Invoice Now" icon="fa-file-text-o" invisible="state != 'pending'" groups="solar_security.group_solar_finance"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

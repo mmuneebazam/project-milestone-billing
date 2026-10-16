@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_ms_tmpl_user,milestone template user,model_solar_milestone_template,base.group_user,1,0,0,0
+access_ms_tmpl_mgr,milestone template manager,model_solar_milestone_template,solar_security.group_solar_manager,1,1,1,1
+access_ms_tmpl_line_user,milestone template line user,model_solar_milestone_template_line,base.group_user,1,0,0,0
+access_ms_tmpl_line_mgr,milestone template line manager,model_solar_milestone_template_line,solar_security.group_solar_manager,1,1,1,1
+access_ms_user,milestone user,model_solar_milestone,base.group_user,1,0,0,0
+access_ms_sales,milestone sales,model_solar_milestone,solar_security.group_solar_sales,1,1,1,0
+access_ms_fin,milestone finance,model_solar_milestone,solar_security.group_solar_finance,1,1,1,1
+access_ms_mgr,milestone manager,model_solar_milestone,solar_security.group_solar_manager,1,1,1,1

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="template_30_50_20" model="solar.milestone.template">
+        <field name="name">30% Advance / 50% Delivery / 20% Commissioning</field>
+    </record>
+    <record id="template_30_50_20_l1" model="solar.milestone.template.line">
+        <field name="template_id" ref="template_30_50_20"/>
+        <field name="sequence">10</field><field name="name">Advance</field>
+        <field name="percent">30</field><field name="trigger_code">advance</field>
+    </record>
+    <record id="template_30_50_20_l2" model="solar.milestone.template.line">
+        <field name="template_id" ref="template_30_50_20"/>
+        <field name="sequence">20</field><field name="name">On delivery</field>
+        <field name="percent">50</field><field name="trigger_code">delivery</field>
+    </record>
+    <record id="template_30_50_20_l3" model="solar.milestone.template.line">
+        <field name="template_id" ref="template_30_50_20"/>
+        <field name="sequence">30</field><field name="name">On commissioning</field>
+        <field name="percent">20</field><field name="trigger_code">commissioning</field>
+    </record>
+
+    <record id="stage_design" model="project.project.stage"><field name="name">Design &amp; Permits</field><field name="sequence">10</field></record>
+    <record id="stage_procurement" model="project.project.stage"><field name="name">Procurement &amp; Delivery</field><field name="sequence">20</field></record>
+    <record id="stage_installation" model="project.project.stage"><field name="name">Installation</field><field name="sequence">30</field></record>
+    <record id="stage_commissioned" model="project.project.stage">
+        <field name="name">Commissioned</field><field name="sequence">40</field>
+        <field name="solar_milestone_code">commissioning</field>
+    </record>
+</odoo>
